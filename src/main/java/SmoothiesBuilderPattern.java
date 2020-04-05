@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class SmoothiesBuilderPattern {
     private String name;
-    private Base base = Base.TAP_WATER;
-    private String[] additionalIngredients = new String[]{"No additional ingredients"};
+    private Base base;
+    private String[] additionalIngredients;
     private int capacity;
 
     private SmoothiesBuilderPattern(String name, int capacity) {
@@ -45,18 +45,17 @@ public class SmoothiesBuilderPattern {
 
     @Override
     public String toString() {
-        return "SmoothiesBuilderPattern{" +
-                "name='" + name + '\'' +
-                ", base=" + base +
-                ", additionalIngredients=" + Arrays.toString(additionalIngredients) +
-                ", capacity=" + capacity +
-                '}';
+        return name + " smoothie" +
+                ", based on " + base +
+                ", with: " + Arrays.toString(additionalIngredients) +
+                ", of a capacity of " + capacity +
+                " ml.";
     }
 
     public static class SmoothiesBuilderPatternBuilder {
         private String name;
-        private Base base;
-        private String[] additionalIngredients;
+        private Base base = Base.TAP_WATER;;
+        private String[] additionalIngredients = new String[]{"no additional ingredients"};
         private int capacity;
 
         private SmoothiesBuilderPatternBuilder(String name, int capacity) {
